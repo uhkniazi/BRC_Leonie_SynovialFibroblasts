@@ -1,3 +1,25 @@
+oDiag.1 = calculateExtremeValues(oDiag.1)
+oDiag.2 = calculateExtremeValues(oDiag.2)
+m1 = mGetExtremeValues(oDiag.1)
+m2 = mGetExtremeValues(oDiag.2)
+
+## samples with most extreme values
+apply(m1, 2, function(x) sum(x > 0))
+apply(m2, 2, function(x) sum(x > 0))
+
+## variables that are contributing to this
+v1 = apply(m1, 1, function(x) sum(x > 0))
+v2 = apply(m2, 1, function(x) sum(x > 0))
+
+which(v1 > 0)
+which(v2 > 0)
+
+
+
+
+
+
+
 library(GEOquery)
 # library(Biobase)
 # library(lumi)
